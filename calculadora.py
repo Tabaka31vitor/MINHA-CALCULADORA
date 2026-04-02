@@ -31,10 +31,8 @@ escolha = input("digite sua escolha: ")
 print()
 
 if escolha == "+" or escolha == "-" or escolha == "*" or escolha == "md":
-    # Lista para armazenar os números
     numeros = []
     
-    # Loop para adicionar números até o usuário decidir parar
     while True:
         n = input("Digite um número (ou 'sair' para parar): ")
         if n.lower() == 'sair':
@@ -44,12 +42,12 @@ if escolha == "+" or escolha == "-" or escolha == "*" or escolha == "md":
         except ValueError:
             print("Por favor, digite um número válido!")
     
-    # Verifica se tem pelo menos 2 números
+
     if len(numeros) < 2:
         print("Você precisa de pelo menos 2 números!")
     else:
         if escolha == "+":
-            resultado = sum(numeros)  # Soma todos os números da lista
+            resultado = sum(numeros)  
             print(f"Resultado: {resultado}")
 
         elif escolha == "-":
