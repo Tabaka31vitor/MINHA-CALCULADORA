@@ -373,6 +373,20 @@ elif escolha == "v":
             base1 = (math.sqrt(3) * base**2) / 4
             volume = (base1 * altura) / 3
             print(volume)
+            
+elif escolha == "c":
+    print("1-por raio  2-por diâmetro")
+    prr = input("Escolha: ")
+    
+    if prr == "1":
+        raio = float(input("Qual o raio? "))
+        resultado = 2 * raio * 3.14
+        print(resultado)
+        
+    elif prr == "2":
+        diametro = float(input("Qual o diâmetro? "))
+        resultado = 3.14 * diametro
+        print(resultado)
 #FEITO ATÉ 02/04/2026
         
         
