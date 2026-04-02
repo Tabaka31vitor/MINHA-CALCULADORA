@@ -1,7 +1,6 @@
 #CALCULADORA SIMPLES
 import math
 
-#operação
 print("ESCOLHA A OPERAÇÃO:")
 print()
 print("+ - soma")
@@ -26,6 +25,7 @@ print("log - logaritmo")
 print("trig - seno, cos, tan")
 print("a - area de formas geométricas")
 print("v - volume de formas geométricas")
+print("c - circunferencia)
 print()
 escolha = input("digite sua escolha: ")
 print()
