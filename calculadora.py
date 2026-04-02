@@ -1,4 +1,4 @@
-#CALCULADORA
+#CALCULADORA SIMPLES
 import math
 
 #operação
