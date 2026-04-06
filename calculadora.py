@@ -25,14 +25,14 @@ print("log - logaritmo")
 print("trig - seno, cos, tan")
 print("a - area de formas geométricas")
 print("v - volume de formas geométricas")
-print("c - circunferencia)
+print("c - circunferencia")
+print("tp - teorema de pitagoras")
+print("pe - perimetro")
 print()
 escolha = input("digite sua escolha: ")
 print()
-
 if escolha == "+" or escolha == "-" or escolha == "*" or escolha == "md":
     numeros = []
-    
     while True:
         n = input("Digite um número (ou 'sair' para parar): ")
         if n.lower() == 'sair':
@@ -41,21 +41,17 @@ if escolha == "+" or escolha == "-" or escolha == "*" or escolha == "md":
             numeros.append(float(n))
         except ValueError:
             print("Por favor, digite um número válido!")
-    
-
     if len(numeros) < 2:
         print("Você precisa de pelo menos 2 números!")
     else:
         if escolha == "+":
             resultado = sum(numeros)  
             print(f"Resultado: {resultado}")
-
         elif escolha == "-":
             resultado = numeros[0]
             for num in numeros[1:]:
                 resultado -= num
             print(f"Resultado: {resultado}")
-
         elif escolha == "*":
             resultado = 1
             for num in numeros:
@@ -64,19 +60,16 @@ if escolha == "+" or escolha == "-" or escolha == "*" or escolha == "md":
         elif escolha == "md":
             resultado = sum(numeros) / len(numeros)
             print(f"Média: {resultado}")
-
 elif escolha == "/":
     n1 = float(input("escolha um numero: "))
     n2 = float(input("escolha outro numero: "))
     resultado = (n1/n2)
     print(resultado)
-    
 elif escolha == "%":
     valor = float(input("escolha o valor: "))
     porcentagem = float(input("escolha a porcentagem: "))
     resultado = (valor*porcentagem) / 100
     print(resultado)
-
 elif escolha == "!":
     n = int(input("escolha um numero inteiro: "))
     if n < 0:
@@ -84,23 +77,19 @@ elif escolha == "!":
     else:
         resultado = math.factorial(n)
         print(resultado)
-
 elif escolha == "&2":
     raiz2 = int(input("escolha um numero inteiro: "))
     resultado = raiz2 ** 0.5
     print(resultado)
-
 elif escolha == "&3":
     raiz3 = int(input("escolha um numero inteiro: "))
     resultado = raiz3 ** 1/3
     print(resultado)
-
 elif escolha == "p":
     base = float(input("escolha a base"))
     expoente = float(input("escolha o expoente"))
     resultado = base ** expoente
     print(resultado)
-
 elif escolha == "r3":
     print("Regra de 3: a/b = x/c")
     a = float(input("digite 'a': "))
@@ -111,12 +100,10 @@ elif escolha == "r3":
     else:
         x = (a * c) / b
         print(f"x = ({a} * {c}) / {b} = {x}")
-
 elif escolha == "1":
     a = float(input("escolha o valor de A: "))
     b = float(input("escolha o valor de B: "))
     c = float(input("escolha o valor de C: "))
-    
     if a == 0:
         if b == c:
             print("infinitas soluções")
@@ -125,14 +112,11 @@ elif escolha == "1":
     else:
         x = (c - b) / a
         print(x)
-
 elif escolha == "@":
     a = float(input("escolha o valor de A: "))
     b = float(input("escolha o valor de B: "))
     c = float(input("escolha o valor de C: "))
-    
     delta = b**2 - 4*a*c
-    
     if delta > 0:
         x1 = (-b + math.sqrt(delta)) / 2*a
         x2 = (-b - math.sqrt(delta)) / 2*a
@@ -145,14 +129,11 @@ elif escolha == "@":
         print(x)
     else: 
         print("não existe raiz real")
-
 elif escolha == "2":
     a = float(input("escolha o valor de A: "))
     b = float(input("escolha o valor de B: "))
     c = float(input("escolha o valor de C: "))
-    
     delta = b**2 - 4*a*c
-    
     if delta > 0:
         x1 = (-b + math.sqrt(delta)) / 2*a
         x2 = (-b - math.sqrt(delta)) / 2*a
@@ -165,48 +146,39 @@ elif escolha == "2":
         print(x)
     else: 
         print("não existe raiz real")
-    
 elif escolha == "j":
     c = float(input("digite o valor de capital: "))
     i = float(input("digite o valor de i: "))
     t = float(input("digite o valor de t: "))
     juros = (c*i*t) /100
     print(juros)
-    
 elif escolha == "jc":
     c = float(input("digite o valor do capital: "))
     i = float(input("digite a taxa de juros: "))
     t = float(input("digite o tempo: "))
     n = int(input("digite o número de períodos por ano: "))
-    
     montante = c * (1 + i/(100*n)) ** (n*t)
     print(montante)
     print(montante - c)
-    
 elif escolha == "s2":
     print("Sistema Linear 2x2:")
     print("a1*x + b1*y = c1")
     print("a2*x + b2*y = c2")
     print("-" * 25)
-    
     a1 = float(input("a1: "))
     b1 = float(input("b1: "))
     c1 = float(input("c1: "))
     a2 = float(input("a2: "))
     b2 = float(input("b2: "))
     c2 = float(input("c2: "))
-    
     det = a1*b2 - a2*b1
-    
     if abs(det) < 1e-10:
         print("sem solução única!")
     else:
         x = (c1*b2 - c2*b1) / det
         y = (a1*c2 - a2*c1) / det
-        
         print(f"  x = {x:.6f}")
         print(f"  y = {y:.6f}")
-        
 elif escolha == "s3":
     try:
         a1 = float(input("a1: "))
@@ -221,47 +193,37 @@ elif escolha == "s3":
         b3 = float(input("b3: "))
         c3 = float(input("c3: "))
         d3 = float(input("d3:"))
-        
         det = a1*(b2*c3-b3*c2) - b1*(a2*c3-a3*c2) + c1*(a2*b3-a3*b2)
-        
         if abs(det) < 1e-10:
             print("sem solução!")
         else:
             x = (d1*(b2*c3-b3*c2) - b1*(d2*c3-d3*c2) + c1*(d2*b3-d3*b2)) / det
             y = (a1*(d2*c3-d3*c2) - d1*(a2*c3-a3*c2) + c1*(a2*d3-a3*d2)) / det
             z = (a1*(b2*d3-b3*d2) - b1*(a2*d3-a3*d2) + d1*(a2*b3-a3*b2)) / det
-            
-            print(f"\nx={x:.4f} y={y:.4f} z={z:.4f}")
-            
+            print(f"\nx={x:.4f} y={y:.4f} z={z:.4f}") 
     except ValueError:
         print("digite apenas números!")
     except:
         print("erro no cálculo!")
-        
 elif escolha == "log":
     print("Logaritmo log_b(x)")
     try:
         x = float(input("x (argumento): "))
         b = float(input("b (base): "))
-        
         if x <= 0 or b <= 0 or b == 1:
             print("x > 0 e b > 0 ≠ 1!")
         else:
             resultado = math.log(x, b)
             print("resultado")
-            print(resultado)
-            
+            print(resultado) 
     except:
         print("numeros inválidos!")
-        
 elif escolha == "trig":
     print("1-Seno  2-Cosseno  3-Tangente")
     op = input("escolha: ")
-    
     try:
         angulo = float(input("graus: "))
         rad = math.radians(angulo)
-        
         if op == "1":
             print("sin(", angulo, "°) =", math.sin(rad))
         elif op == "2":
@@ -271,93 +233,76 @@ elif escolha == "trig":
         else:
             print("sin =", math.sin(rad))
             print("cos =", math.cos(rad))
-            print("tan =", math.tan(rad))
-            
+            print("tan =", math.tan(rad)) 
     except:
-        print("deu erro")
-        
+        print("deu erro")  
 elif escolha == "a":
     print("1-Quadrado 2-Retângulo 3-Triângulo 4-Trapézio 5-Circulo 6-Losango")
     opp = input("escolha: ")
-    
     if opp == "1":
         lado = float(input("qual o tamanho do lado do quadrado? "))
         resultado = print (lado**2)
-        print(resultado)
-        
+        print(resultado) 
     elif opp == "2":
         base = float(input("qual a base do retangulo? "))
         altura = float(input("qual a altura do retangulo? "))
         resultado = print(base * altura)
         print(resultado)
-    
     elif opp == "3":
         base = float(input("qual a base do triangulo? "))
         altura = float(input("qual a altura do triangulo? "))
         resultado = (base * altura) / 2  
         print(resultado)
-
     elif opp == "4":
         base = float(input("qual a base maior do trapezio? "))
         altura = float(input("qual a altura do triapezio? "))
         base2 = float(input("qual a base menor do trapezio? "))
         resultado = ((base + base2) * altura) / 2
         print(resultado)
-        
     elif opp == "5":
         raio = float(input("qual o raio do circulo? "))
         resultado = ((raio**2) * 3.14)
         print(resultado)
-    
     elif opp == "6":
         diagmaior = float(input("qual a diagonal maior? "))
         diagmenor = float(input("qual a diagonal menor? "))
         resultado = (diagmaior * diagmenor) / 2
         print(resultado)
-        
 elif escolha == "v":
     print("1-cubo 2-paralelepipedo 3-cone 4-cilindro 5-esfera 6-piramide")
     opp = input("escolha a opção ")
-    
     if opp == "1":
         aresta = float(input("qual a aresta do cubo? "))
         resultado = print(aresta**3)
         print(resultado)
-        
     elif opp == "2":
         comprimento = float(input("qual o comprimendo? "))
         altura = float(input("qual a altura? "))
         largura = float(input("qual a largura? "))
         resultado = print(comprimento * altura * largura)
         print(resultado)
-        
     elif opp == "4":
         altura = float(input("qual a altura? "))
         raio = float(input("qual o raio? "))
         resultado = print(((raio**2) * altura)*3.14)
         print(resultado)
-        
     elif opp == "3":
         altura = float(input("qual a altura? "))
         raio = float(input("qual o raio? "))
         resultado = print((((raio**2) * altura)*3.14)/3)
-        print(resultado)
-        
+        print(resultado_
     elif opp == "5":
         raio = float(input("qual o valor do raio? "))
         resultado = print((((raio**3)*3.14)*4)/3)
-        
     elif opp =="6":
         escolha = print("1-base quadrada 2-base retangular 3-base triangular")
         bss = input("escolha: ")
-        
         if bss == "1":
             base = float(input("qual o lado da base? "))
             altura = float(input("qual a altura? "))
             base1 = base**2
             resultado = print((base1 * altura)/3)
             print(resultado)
-            
         elif bss == "2":
             largura = float(input("qual a largura da base? "))
             comprimento = float(input("qual o comprimento da base? "))
@@ -365,30 +310,70 @@ elif escolha == "v":
             lc = largura*comprimento
             resultado = print((lc*altura)/3)
             print(resultado)
-        
         elif bss == "3":
             altura = float(input("Qual a altura? "))
             base = float(input("Qual a base? "))
-            
             base1 = (math.sqrt(3) * base**2) / 4
             volume = (base1 * altura) / 3
             print(volume)
-            
 elif escolha == "c":
     print("1-por raio  2-por diâmetro")
     prr = input("Escolha: ")
-    
     if prr == "1":
         raio = float(input("Qual o raio? "))
         resultado = 2 * raio * 3.14
         print(resultado)
-        
     elif prr == "2":
         diametro = float(input("Qual o diâmetro? "))
         resultado = 3.14 * diametro
         print(resultado)
 #FEITO ATÉ 02/04/2026
-        
+#dia06/04/2026
+elif escolha == "tp":
+    opc = input("1-hipotenusa 2-cateto A 3-cateto B: ")
+    if opc == "1":
+        a = float(input("escolha o valor de A: "))
+        b = float(input("escolha o valor de B: "))
+        resultado = math.sqrt(a**2 + b**2)
+        print(resultado)
+    elif opc == "2":
+        b = float(input("Digite o cateto B: "))
+        c = float(input("Digite a hipotenusa C: "))
+        resultado = (c**2 - b**2)**0.5
+        print(resultado)
+    elif opc == "3":
+        a = float(input("Digite o cateto A: "))
+        c = float(input("Digite a hipotenusa C: "))
+        resultado = (c**2 - a**2)**0.5
+        print(resultado)
+elif escolha == "pe":
+    frm = input("1-quadrado 2-retangulo 3-triangulo 4-trapézio 5-circulo: ")
+    if frm == "1":
+        lado = float(input("qual o valor de um lado? "))
+        resultado = lado * 4
+        print(resultado)
+    elif frm == "2":
+        lado1 = float(input("qual o valor da base? "))
+        lado2 = float(input("qual o valor da altura? "))
+        resultado = (lado1 + lado2) * 2
+        print(resultado)
+    elif frm == "3":
+        l1 = float(input("qual o valor da lado1? "))
+        l2 = float(input("qual o valor da lado2? "))
+        l3 = float(input("qual o valor da lado3? "))
+        resultado = l1 + l2 + l3
+        print(resultado)
+    elif frm == "4":
+        bm = float(input("qual o valor da base maior? "))
+        bn = float(input("qual o valor da base menor? "))
+        altura = float(input("qual o valor da altura? "))
+        resultado = bm + bn + (altura * 2)
+        print(resultado)
+    elif frm == "5":
+        raio = float(input("qual o valor do raio? "))
+        resultado = 2 * 3.14 * raio
+        print(resultado)
+
         
         
         
