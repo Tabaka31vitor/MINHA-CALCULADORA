@@ -28,6 +28,7 @@ print("v - volume de formas geométricas")
 print("c - circunferencia")
 print("tp - teorema de pitagoras")
 print("pe - perimetro")
+print("data - diferença entre datas")
 print()
 escolha = input("digite sua escolha: ")
 print()
@@ -373,7 +374,11 @@ elif escolha == "pe":
         raio = float(input("qual o valor do raio? "))
         resultado = 2 * 3.14 * raio
         print(resultado)
-
+elif escolha == "data":
+    data1 = input("data inicial (dd/mm/aaaa): ")
+    data2 = input("data final (dd/mm/aaaa): ")
+    d1 = datetime.strptime(data1, "%d/%m/%Y")
+    d2 = datetime.strptime(data2, "%d/%m/%Y")
         
         
         
