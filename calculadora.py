@@ -379,6 +379,11 @@ elif escolha == "data":
     data2 = input("data final (dd/mm/aaaa): ")
     d1 = datetime.strptime(data1, "%d/%m/%Y")
     d2 = datetime.strptime(data2, "%d/%m/%Y")
+    diferenca = d2 - d1
+    print(f"\nQuantidade de dias: {diferenca.days}")
+
+
+#CODDYTECH
         
         
         
