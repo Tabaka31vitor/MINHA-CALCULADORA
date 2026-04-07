@@ -208,10 +208,9 @@ elif escolha == "s3":
     except:
         print("erro no cálculo!")
 elif escolha == "log":
-    print("Logaritmo log_b(x)")
     try:
-        x = float(input("x (argumento): "))
-        b = float(input("b (base): "))
+        x = float(input("digite o logaritmando: "))
+        b = float(input("digite o valor da base: "))
         if x <= 0 or b <= 0 or b == 1:
             print("x > 0 e b > 0 ≠ 1!")
         else:
