@@ -1,5 +1,6 @@
 #CALCULADORA SIMPLES
 import math
+from datetime import datetime
 
 print("ESCOLHA A OPERAÇÃO:")
 print()
@@ -291,7 +292,7 @@ elif escolha == "v":
         altura = float(input("qual a altura? "))
         raio = float(input("qual o raio? "))
         resultado = print((((raio**2) * altura)*3.14)/3)
-        print(resultado_
+        print(resultado)
     elif opp == "5":
         raio = float(input("qual o valor do raio? "))
         resultado = print((((raio**3)*3.14)*4)/3)
